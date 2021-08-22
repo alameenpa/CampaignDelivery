@@ -43,8 +43,8 @@ class CampaignsDelivery extends Command
     public function handle()
     {
         //fetch campaigns
-        // $campaigns = Campaign::where('scheduled_at', now())->where('status', 0)->with('template')->get();
-        $campaigns = Campaign::where('status', 0)->with('template')->get();
+        $campaigns = Campaign::where('scheduled_at', now())->where('status', 0)->with('template')->get();
+        // $campaigns = Campaign::where('status', 0)->with('template')->get();
 
         if (!empty($campaigns)) {
             //fetch chunk value for iteration
